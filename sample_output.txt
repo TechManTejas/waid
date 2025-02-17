@@ -1,0 +1,166 @@
+(venv) qed@qed-Latitude-3420:~/Documents/waid$ waid
+Logs from waid.log:
+2025-02-17 13:22:49 - {"timestamp": "2025-02-17 13:22:49", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 13:22:51 - {"timestamp": "2025-02-17 13:22:51", "window_title": "waid.service - waid - Visual Studio Code"}
+2025-02-17 13:23:27 - {"timestamp": "2025-02-17 13:23:27", "window_title": "ChatGPT - Google Chrome"}
+2025-02-17 13:23:28 - {"timestamp": "2025-02-17 13:23:28", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 13:25:28 - {"timestamp": "2025-02-17 13:25:28", "window_title": "What Is a Theme? | Drupal 8, Drupal 9, Drupal 10, and Drupal 11 - Google Chrome"}
+2025-02-17 13:27:17 - {"timestamp": "2025-02-17 13:27:17", "window_title": "ChatGPT - Google Chrome"}
+2025-02-17 13:27:36 - {"timestamp": "2025-02-17 13:27:36", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 13:28:26 - {"timestamp": "2025-02-17 13:28:26", "window_title": "What Is a Theme? | Drupal 8, Drupal 9, Drupal 10, and Drupal 11 - Google Chrome"}
+2025-02-17 13:28:29 - {"timestamp": "2025-02-17 13:28:29", "window_title": "Drupalize.Me Guides | Drupalize.Me - Google Chrome"}
+2025-02-17 13:28:35 - {"timestamp": "2025-02-17 13:28:35", "window_title": "Frontend Theming - Google Chrome"}
+2025-02-17 13:28:59 - {"timestamp": "2025-02-17 13:28:59", "window_title": "Home - QED42 - Slack"}
+2025-02-17 13:29:04 - {"timestamp": "2025-02-17 13:29:04", "window_title": "wdi (Channel) - QED42 - Slack"}
+2025-02-17 13:29:17 - {"timestamp": "2025-02-17 13:29:17", "window_title": "Frontend Theming - Google Chrome"}
+2025-02-17 13:29:17 - {"timestamp": "2025-02-17 13:29:17", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 13:32:28 - {"timestamp": "2025-02-17 13:32:28", "window_title": "waid.service - waid - Visual Studio Code"}
+2025-02-17 13:32:43 - {"timestamp": "2025-02-17 13:32:43", "window_title": "waid.bash - waid - Visual Studio Code"}
+2025-02-17 13:32:44 - {"timestamp": "2025-02-17 13:32:44", "window_title": "waid.service - waid - Visual Studio Code"}
+2025-02-17 13:33:04 - {"timestamp": "2025-02-17 13:33:04", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 13:33:05 - {"timestamp": "2025-02-17 13:33:05", "window_title": "Frontend Theming - Google Chrome"}
+2025-02-17 13:33:05 - {"timestamp": "2025-02-17 13:33:05", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 13:34:36 - {"timestamp": "2025-02-17 13:34:36", "window_title": "waid.service - waid - Visual Studio Code"}
+2025-02-17 13:34:38 - {"timestamp": "2025-02-17 13:34:38", "window_title": "waid.bash - waid - Visual Studio Code"}
+2025-02-17 13:35:23 - {"timestamp": "2025-02-17 13:35:23", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 13:36:16 - {"timestamp": "2025-02-17 13:36:16", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 13:36:39 - {"timestamp": "2025-02-17 13:36:39", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 13:37:14 - {"timestamp": "2025-02-17 13:37:14", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 13:40:04 - {"timestamp": "2025-02-17 13:40:04", "window_title": "ChatGPT - Google Chrome"}
+2025-02-17 13:40:11 - {"timestamp": "2025-02-17 13:40:11", "window_title": "groq - Google Search - Google Chrome"}
+2025-02-17 13:40:16 - {"timestamp": "2025-02-17 13:40:16", "window_title": "Groq is Fast AI Inference - Google Chrome"}
+2025-02-17 13:40:18 - {"timestamp": "2025-02-17 13:40:18", "window_title": "GroqCloud - Google Chrome"}
+2025-02-17 13:40:26 - {"timestamp": "2025-02-17 13:40:26", "window_title": "Playground - GroqCloud - Google Chrome"}
+2025-02-17 13:40:29 - {"timestamp": "2025-02-17 13:40:29", "window_title": "GroqCloud - Google Chrome"}
+2025-02-17 13:40:49 - {"timestamp": "2025-02-17 13:40:49", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 13:41:39 - {"timestamp": "2025-02-17 13:41:39", "window_title": "waid.yml - waid - Visual Studio Code"}
+2025-02-17 13:41:41 - {"timestamp": "2025-02-17 13:41:41", "window_title": "GroqCloud - Google Chrome"}
+2025-02-17 13:41:45 - {"timestamp": "2025-02-17 13:41:45", "window_title": "waid.yml - waid - Visual Studio Code"}
+2025-02-17 13:41:45 - {"timestamp": "2025-02-17 13:41:45", "window_title": "GroqCloud - Google Chrome"}
+2025-02-17 13:41:47 - {"timestamp": "2025-02-17 13:41:47", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 13:41:50 - {"timestamp": "2025-02-17 13:41:50", "window_title": "waid.yml - waid - Visual Studio Code"}
+2025-02-17 13:42:07 - {"timestamp": "2025-02-17 13:42:07", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 13:42:14 - {"timestamp": "2025-02-17 13:42:14", "window_title": "waid.yml - waid - Visual Studio Code"}
+2025-02-17 13:42:14 - {"timestamp": "2025-02-17 13:42:14", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 13:42:22 - {"timestamp": "2025-02-17 13:42:22", "window_title": "waid.bash - waid - Visual Studio Code"}
+2025-02-17 13:42:22 - {"timestamp": "2025-02-17 13:42:22", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 13:42:27 - {"timestamp": "2025-02-17 13:42:27", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 13:42:28 - {"timestamp": "2025-02-17 13:42:28", "window_title": "GroqCloud - Google Chrome"}
+2025-02-17 13:42:31 - {"timestamp": "2025-02-17 13:42:31", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 13:42:41 - {"timestamp": "2025-02-17 13:42:41", "window_title": "GroqCloud - Google Chrome"}
+2025-02-17 13:43:20 - {"timestamp": "2025-02-17 13:43:20", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 13:43:27 - {"timestamp": "2025-02-17 13:43:27", "window_title": "GroqCloud - Google Chrome"}
+2025-02-17 13:43:31 - {"timestamp": "2025-02-17 13:43:31", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 13:44:15 - {"timestamp": "2025-02-17 13:44:15", "window_title": "GroqCloud - Google Chrome"}
+2025-02-17 13:44:16 - {"timestamp": "2025-02-17 13:44:16", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 13:44:34 - {"timestamp": "2025-02-17 13:44:34", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 13:44:54 - {"timestamp": "2025-02-17 13:44:54", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 13:44:57 - {"timestamp": "2025-02-17 13:44:57", "window_title": "GroqCloud - Google Chrome"}
+2025-02-17 13:45:34 - {"timestamp": "2025-02-17 13:45:34", "window_title": "wdi (Channel) - QED42 - Slack"}
+2025-02-17 13:45:36 - {"timestamp": "2025-02-17 13:45:36", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 13:45:39 - {"timestamp": "2025-02-17 13:45:39", "window_title": "New Tab - Google Chrome"}
+2025-02-17 13:45:50 - {"timestamp": "2025-02-17 13:45:50", "window_title": "Inbox (71) - tejas.vaij@qed42.com - QED42 Engineering Pvt Ltd Mail - Google Chrome"}
+2025-02-17 13:46:01 - {"timestamp": "2025-02-17 13:46:01", "window_title": "GroqCloud - Google Chrome"}
+2025-02-17 13:46:05 - {"timestamp": "2025-02-17 13:46:05", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 13:46:09 - {"timestamp": "2025-02-17 13:46:09", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 13:46:10 - {"timestamp": "2025-02-17 13:46:10", "window_title": "window_logger.py - waid - Visual Studio Code"}
+2025-02-17 13:46:10 - {"timestamp": "2025-02-17 13:46:10", "window_title": "LICENSE - waid - Visual Studio Code"}
+2025-02-17 13:46:11 - {"timestamp": "2025-02-17 13:46:11", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 14:21:25 - {"timestamp": "2025-02-17 14:21:25", "window_title": "GroqCloud - Google Chrome"}
+2025-02-17 14:21:26 - {"timestamp": "2025-02-17 14:21:26", "window_title": "Groq is Fast AI Inference - Google Chrome"}
+2025-02-17 14:21:27 - {"timestamp": "2025-02-17 14:21:27", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:21:38 - {"timestamp": "2025-02-17 14:21:38", "window_title": "Linux Activity Logger - Google Chrome"}
+2025-02-17 14:21:46 - {"timestamp": "2025-02-17 14:21:46", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:21:56 - {"timestamp": "2025-02-17 14:21:56", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 14:21:57 - {"timestamp": "2025-02-17 14:21:57", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:22:07 - {"timestamp": "2025-02-17 14:22:07", "window_title": "GroqCloud - Google Chrome"}
+2025-02-17 14:22:13 - {"timestamp": "2025-02-17 14:22:13", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:22:57 - {"timestamp": "2025-02-17 14:22:57", "window_title": "GroqCloud - Google Chrome"}
+2025-02-17 14:23:04 - {"timestamp": "2025-02-17 14:23:04", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 14:23:05 - {"timestamp": "2025-02-17 14:23:05", "window_title": "waid.yml - waid - Visual Studio Code"}
+2025-02-17 14:25:20 - {"timestamp": "2025-02-17 14:25:20", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 14:25:27 - {"timestamp": "2025-02-17 14:25:27", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:25:34 - {"timestamp": "2025-02-17 14:25:34", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 14:28:19 - {"timestamp": "2025-02-17 14:28:19", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:29:19 - {"timestamp": "2025-02-17 14:29:19", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 14:32:20 - {"timestamp": "2025-02-17 14:32:20", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:32:57 - {"timestamp": "2025-02-17 14:32:57", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 14:32:57 - {"timestamp": "2025-02-17 14:32:57", "window_title": "waid.yml - waid - Visual Studio Code"}
+2025-02-17 14:33:16 - {"timestamp": "2025-02-17 14:33:16", "window_title": "waid.bash - waid - Visual Studio Code"}
+2025-02-17 14:33:26 - {"timestamp": "2025-02-17 14:33:26", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:33:29 - {"timestamp": "2025-02-17 14:33:29", "window_title": "waid.bash - waid - Visual Studio Code"}
+2025-02-17 14:33:37 - {"timestamp": "2025-02-17 14:33:37", "window_title": "requirements.txt - waid - Visual Studio Code"}
+2025-02-17 14:34:17 - {"timestamp": "2025-02-17 14:34:17", "window_title": "waid.bash - waid - Visual Studio Code"}
+2025-02-17 14:34:18 - {"timestamp": "2025-02-17 14:34:18", "window_title": "waid.service - waid - Visual Studio Code"}
+2025-02-17 14:34:19 - {"timestamp": "2025-02-17 14:34:19", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:34:40 - {"timestamp": "2025-02-17 14:34:40", "window_title": "waid.service - waid - Visual Studio Code"}
+2025-02-17 14:34:40 - {"timestamp": "2025-02-17 14:34:40", "window_title": "window_logger.py - waid - Visual Studio Code"}
+2025-02-17 14:34:43 - {"timestamp": "2025-02-17 14:34:43", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 14:35:26 - {"timestamp": "2025-02-17 14:35:26", "window_title": "config.yaml - waid - Visual Studio Code"}
+2025-02-17 14:35:28 - {"timestamp": "2025-02-17 14:35:28", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:36:13 - {"timestamp": "2025-02-17 14:36:13", "window_title": "config.yaml - waid - Visual Studio Code"}
+2025-02-17 14:36:57 - {"timestamp": "2025-02-17 14:36:57", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:37:04 - {"timestamp": "2025-02-17 14:37:04", "window_title": "config.yaml - waid - Visual Studio Code"}
+2025-02-17 14:37:04 - {"timestamp": "2025-02-17 14:37:04", "window_title": "waid.bash - waid - Visual Studio Code"}
+2025-02-17 14:37:05 - {"timestamp": "2025-02-17 14:37:05", "window_title": "waid.service - waid - Visual Studio Code"}
+2025-02-17 14:37:07 - {"timestamp": "2025-02-17 14:37:07", "window_title": "window_logger.py - waid - Visual Studio Code"}
+2025-02-17 14:37:09 - {"timestamp": "2025-02-17 14:37:09", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 14:38:24 - {"timestamp": "2025-02-17 14:38:24", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:40:36 - {"timestamp": "2025-02-17 14:40:36", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 14:41:02 - {"timestamp": "2025-02-17 14:41:02", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:41:12 - {"timestamp": "2025-02-17 14:41:12", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 14:41:49 - {"timestamp": "2025-02-17 14:41:49", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:42:32 - {"timestamp": "2025-02-17 14:42:32", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 14:42:56 - {"timestamp": "2025-02-17 14:42:56", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:43:11 - {"timestamp": "2025-02-17 14:43:11", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 14:43:20 - {"timestamp": "2025-02-17 14:43:20", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:43:26 - {"timestamp": "2025-02-17 14:43:26", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 14:48:04 - {"timestamp": "2025-02-17 14:48:04", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:49:04 - {"timestamp": "2025-02-17 14:49:04", "window_title": "log_summarizer.py - waid - Visual Studio Code"}
+2025-02-17 14:49:06 - {"timestamp": "2025-02-17 14:49:06", "window_title": "waid.bash - waid - Visual Studio Code"}
+2025-02-17 14:49:07 - {"timestamp": "2025-02-17 14:49:07", "window_title": "waid.service - waid - Visual Studio Code"}
+2025-02-17 14:49:09 - {"timestamp": "2025-02-17 14:49:09", "window_title": "waid.bash - waid - Visual Studio Code"}
+2025-02-17 14:49:33 - {"timestamp": "2025-02-17 14:49:33", "window_title": "wdi (Channel) - QED42 - Slack"}
+2025-02-17 14:49:35 - {"timestamp": "2025-02-17 14:49:35", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:49:37 - {"timestamp": "2025-02-17 14:49:37", "window_title": "Inbox (71) - tejas.vaij@qed42.com - QED42 Engineering Pvt Ltd Mail - Google Chrome"}
+2025-02-17 14:49:47 - {"timestamp": "2025-02-17 14:49:47", "window_title": "QED42 Engineering Pvt Ltd - Calendar - Week of February 16, 2025 - Google Chrome"}
+2025-02-17 14:49:48 - {"timestamp": "2025-02-17 14:49:48", "window_title": "Inbox (71) - tejas.vaij@qed42.com - QED42 Engineering Pvt Ltd Mail - Google Chrome"}
+2025-02-17 14:49:55 - {"timestamp": "2025-02-17 14:49:55", "window_title": "GroqCloud - Google Chrome"}
+2025-02-17 14:50:06 - {"timestamp": "2025-02-17 14:50:06", "window_title": "GroqCloud Status - Google Chrome"}
+2025-02-17 14:50:16 - {"timestamp": "2025-02-17 14:50:16", "window_title": "GroqCloud - Google Chrome"}
+2025-02-17 14:50:17 - {"timestamp": "2025-02-17 14:50:17", "window_title": "Chrome Tab Detection - Google Chrome"}
+2025-02-17 14:50:18 - {"timestamp": "2025-02-17 14:50:18", "window_title": "Frontend Theming - Google Chrome"}
+2025-02-17 14:51:15 - {"timestamp": "2025-02-17 14:51:15", "window_title": "waid.bash - waid - Visual Studio Code"}
+2025-02-17 14:51:16 - {"timestamp": "2025-02-17 14:51:16", "window_title": "config.yaml - waid - Visual Studio Code"}
+
+
+Generated JIRA Ticket Based on Logs:
+Based on the provided logs, it appears that you were working on various tasks related to coding, research, and communication. Here's a condensed version of your activities:
+
+1. **13:22-13:25**: You were using Google Chrome, with tabs open for "ChatGPT" and "What Is a Theme? | Drupal 8, Drupal 9, Drupal 10, and Drupal 11".
+2. **13:27-13:29**: You switched between Google Chrome tabs, including "Chrome Tab Detection", "GroqCloud", and "wdi (Channel) - QED42 - Slack".
+3. **13:32-13:34**: You worked on coding tasks in Visual Studio Code, editing files like "waid.service", "waid.bash", and "log_summarizer.py".
+4. **13:40-13:41**: You researched "Groq" and visited the "GroqCloud" website.
+5. **13:41-13:45**: You continued working on coding tasks in Visual Studio Code, editing files like "waid.yml" and "log_summarizer.py".
+6. **13:45-14:21**: You took a break and didn't log any activities.
+7. **14:21-14:25**: You resumed working on coding tasks in Visual Studio Code, editing files like "log_summarizer.py" and "waid.yml".
+8. **14:25-14:34**: You worked on various coding tasks, including editing "waid.bash", "requirements.txt", and "waid.service" files.
+9. **14:34-14:41**: You continued working on coding tasks, editing files like "log_summarizer.py", "config.yaml", and "waid.bash".
+10. **14:41-14:49**: You took another break and checked your email and calendar in Google Chrome.
+11. **14:49-14:51**: You returned to coding tasks, editing files like "waid.bash" and "config.yaml".
+
+Considering the tasks you worked on, here's a possible JIRA ticket:
+
+**Title:** Task: Work on waid project and research GroqCloud
+
+**Description:**
+
+* Worked on coding tasks for the waid project, including editing files like log_summarizer.py, waid.yml, and waid.bash.
+* Researched GroqCloud and its features.
+* Took breaks to check email and calendar.
+
+**Time spent:** Approximately 2 hours and 30 minutes.
+
+**Tags:** waid project, GroqCloud, coding, research.
+
+Please note that this is just a suggestion based on the provided logs, and you may need to adjust the ticket to better fit your specific needs and workflow.

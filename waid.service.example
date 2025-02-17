@@ -1,0 +1,16 @@
+[Unit]
+Description=Window Activity Logger Daemon (WAID)
+After=network.target
+
+[Service]
+Type=simple
+Environment="DISPLAY=:0"
+ExecStart=/home/qed/Documents/waid/venv/bin/python /home/qed/Documents/waid/window_logger.py
+Restart=always
+User=qed
+WorkingDirectory=/home/qed/Documents/waid
+StandardOutput=append:/home/qed/waid.log
+StandardError=append:/home/qed/waid.log
+
+[Install]
+WantedBy=multi-user.target
