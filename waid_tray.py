@@ -1,142 +1,159 @@
 import gi
+import time
+import threading
+
 gi.require_version('AppIndicator3', '0.1')
 gi.require_version('Gtk', '3.0')
-from gi.repository import AppIndicator3, Gtk
+from gi.repository import AppIndicator3, Gtk, GLib
 import os
 import subprocess
-from PIL import Image
 
-ICON_RUNNING = os.path.expanduser("~/.waid_running.png")
-ICON_STOPPED = os.path.expanduser("~/.waid_stopped.png")
+ICON_ACTIVE = os.path.abspath("waid_active.png")
+ICON_INACTIVE = os.path.abspath("waid_inactive.png")
+ICON_PAUSED = os.path.abspath("waid_paused.png")
 LOG_FILE = os.path.expanduser("~/waid.log")
 
-# Create icons dynamically
-def create_icons():
-    img_running = Image.new('RGB', (64, 64), (0, 255, 0))  # Green icon for running
-    img_stopped = Image.new('RGB', (64, 64), (255, 0, 0))  # Red icon for stopped
-    img_running.save(ICON_RUNNING)
-    img_stopped.save(ICON_STOPPED)
+timer_running = False
+start_time = None
 
-# Show system notification
 def notify(message):
-    subprocess.run(["notify-send", "--icon=" + ICON_RUNNING, "WAID Service", message])
+    subprocess.run(["notify-send", "WAID Service", message])
 
-# Open log file
 def open_log_file(_):
     subprocess.run(["xdg-open", LOG_FILE])
 
-# Toggle logging (Checkable menu item)
-def toggle_logging(menu_item):
-    if menu_item.get_active():
-        notify("Logging Enabled")
-    else:
-        notify("Logging Disabled")
+def update_timer():
+    while timer_running:
+        if start_time:
+            elapsed = int(time.time() - start_time)
+            hours = elapsed // 3600
+            minutes = (elapsed % 3600) // 60
+            seconds = elapsed % 60
+            GLib.idle_add(indicator.set_label, f"Add 2-3 Fields in Theme Settings... {hours:02}:{minutes:02}:{seconds:02}", "WAID Timer")
+        time.sleep(1)
 
-# Change log level (Radio menu items)
-def set_log_level(menu_item, level):
-    if menu_item.get_active():
-        notify(f"Log Level set to {level}")
+def start_timer():
+    global timer_running, start_time
+    timer_running = True
+    start_time = time.time()
+    threading.Thread(target=update_timer, daemon=True).start()
 
-# Stop WAID Service
-def stop_waid(_):
-    notify("Stopping WAID Service...")
-    indicator.set_icon(ICON_STOPPED)
+def stop_timer():
+    global timer_running
+    timer_running = False
+    GLib.idle_add(indicator.set_label, "WAID", "WAID Timer")
 
-# Quit App
+def set_icon(icon_name):
+    indicator.set_icon_full(icon_name, "")
+
+def set_active(_):
+    notify("WAID Service Active")
+    set_icon(ICON_ACTIVE)
+    start_timer()
+
+def set_inactive(_):
+    notify("WAID Service Inactive")
+    set_icon(ICON_INACTIVE)
+    stop_timer()
+
+def set_paused(_):
+    notify("WAID Service Paused")
+    set_icon(ICON_PAUSED)
+    stop_timer()
+
 def quit_app(_):
     notify("Exiting WAID Tray.")
+    stop_timer()
     Gtk.main_quit()
 
-# Open a new window with buttons, text boxes, and labels
 def open_settings_window(_):
     window = Gtk.Window(title="WAID Settings")
-    window.set_default_size(300, 200)
-
-    vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-    vbox.set_margin_top(10)
-    vbox.set_margin_bottom(10)
-    vbox.set_margin_start(10)
-    vbox.set_margin_end(10)
+    window.set_default_size(400, 400)
+    notebook = Gtk.Notebook()
     
-    # Label
+    # General Settings Tab
+    vbox_general = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
     label = Gtk.Label(label="Enter custom setting:")
-    vbox.pack_start(label, False, False, 0)
-
-    # Text Entry Box
+    vbox_general.pack_start(label, False, False, 0)
     entry = Gtk.Entry()
-    vbox.pack_start(entry, False, False, 0)
-
-    # Buttons
+    vbox_general.pack_start(entry, False, False, 0)
+    check_button = Gtk.CheckButton(label="Enable Feature")
+    vbox_general.pack_start(check_button, False, False, 0)
+    notebook.append_page(vbox_general, Gtk.Label(label="General"))
+    
+    # Advanced Settings Tab
+    vbox_advanced = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+    radio1 = Gtk.RadioButton.new_with_label_from_widget(None, "Option 1")
+    radio2 = Gtk.RadioButton.new_with_label_from_widget(radio1, "Option 2")
+    vbox_advanced.pack_start(radio1, False, False, 0)
+    vbox_advanced.pack_start(radio2, False, False, 0)
+    slider = Gtk.Scale(orientation=Gtk.Orientation.HORIZONTAL)
+    slider.set_range(0, 100)
+    slider.set_value(50)
+    vbox_advanced.pack_start(slider, False, False, 0)
+    combo = Gtk.ComboBoxText()
+    for item in ["Choice 1", "Choice 2", "Choice 3"]:
+        combo.append_text(item)
+    combo.set_active(0)
+    vbox_advanced.pack_start(combo, False, False, 0)
+    notebook.append_page(vbox_advanced, Gtk.Label(label="Advanced"))
+    
+    # Controls Tab
+    vbox_controls = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+    spin_button = Gtk.SpinButton()
+    spin_button.set_range(0, 100)
+    spin_button.set_increments(1, 10)
+    vbox_controls.pack_start(spin_button, False, False, 0)
+    progress_bar = Gtk.ProgressBar()
+    progress_bar.set_fraction(0.5)
+    vbox_controls.pack_start(progress_bar, False, False, 0)
     button1 = Gtk.Button(label="Save Settings")
     button1.connect("clicked", lambda _: notify(f"Settings saved: {entry.get_text()}"))
-    vbox.pack_start(button1, False, False, 0)
-
+    vbox_controls.pack_start(button1, False, False, 0)
     button2 = Gtk.Button(label="Close")
     button2.connect("clicked", lambda _: window.destroy())
-    vbox.pack_start(button2, False, False, 0)
-
-    window.add(vbox)
+    vbox_controls.pack_start(button2, False, False, 0)
+    notebook.append_page(vbox_controls, Gtk.Label(label="Controls"))
+    
+    window.add(notebook)
     window.show_all()
 
-# Create an AppIndicator3 system tray icon
 def main():
-    create_icons()
-
     global indicator
     indicator = AppIndicator3.Indicator.new(
         "WAID Service",
-        ICON_RUNNING,
+        ICON_INACTIVE,
         AppIndicator3.IndicatorCategory.APPLICATION_STATUS
     )
     indicator.set_status(AppIndicator3.IndicatorStatus.ACTIVE)
-
-    # Create menu
     menu = Gtk.Menu()
-
-    # Stop WAID
-    stop_item = Gtk.MenuItem(label="Stop WAID")
-    stop_item.connect("activate", stop_waid)
-    menu.append(stop_item)
-
-    # Logging Toggle
-    log_toggle = Gtk.CheckMenuItem(label="Enable Logging")
-    log_toggle.set_active(True)
-    log_toggle.connect("toggled", toggle_logging)
-    menu.append(log_toggle)
-
-    # Log Level (Radio Buttons)
-    log_level_menu = Gtk.Menu()
-    levels = ["Debug", "Info", "Warning", "Error"]
-    group = None
-
-    for level in levels:
-        menu_item = Gtk.RadioMenuItem(label=level, group=group)
-        group = menu_item
-        menu_item.connect("toggled", set_log_level, level)
-        log_level_menu.append(menu_item)
-
-    log_level_item = Gtk.MenuItem(label="Log Level")
-    log_level_item.set_submenu(log_level_menu)
-    menu.append(log_level_item)
-
-    # Open Log File
+    
+    active_item = Gtk.MenuItem(label="Set Active")
+    active_item.connect("activate", set_active)
+    menu.append(active_item)
+    
+    inactive_item = Gtk.MenuItem(label="Set Inactive")
+    inactive_item.connect("activate", set_inactive)
+    menu.append(inactive_item)
+    
+    paused_item = Gtk.MenuItem(label="Set Paused")
+    paused_item.connect("activate", set_paused)
+    menu.append(paused_item)
+    
     log_file_item = Gtk.MenuItem(label="Open Log File")
     log_file_item.connect("activate", open_log_file)
     menu.append(log_file_item)
-
-    # Open Settings Window
+    
     settings_item = Gtk.MenuItem(label="Settings")
     settings_item.connect("activate", open_settings_window)
     menu.append(settings_item)
-
-    # Quit App
+    
     quit_item = Gtk.MenuItem(label="Quit")
     quit_item.connect("activate", quit_app)
     menu.append(quit_item)
-
+    
     menu.show_all()
     indicator.set_menu(menu)
-
     Gtk.main()
 
 if __name__ == "__main__":
