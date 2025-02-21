@@ -1,0 +1,550 @@
+{
+    "expand": "operations,customfield_10034.properties,versionedRepresentations,customfield_10035.properties,editmeta,changelog,customfield_10010.requestTypePractice,renderedFields",
+    "id": "15126",
+    "self": "https://qed42-operations.atlassian.net/rest/api/2/issue/15126",
+    "key": "QWDI-20",
+    "fields": {
+        "statuscategorychangedate": "2025-02-04T17:45:06.773+0530",
+        "parent": {
+            "id": "15006",
+            "key": "QWDI-2",
+            "self": "https://qed42-operations.atlassian.net/rest/api/2/issue/15006",
+            "fields": {
+                "summary": "Create content structure for your site",
+                "status": {
+                    "self": "https://qed42-operations.atlassian.net/rest/api/2/status/10002",
+                    "description": "",
+                    "iconUrl": "https://qed42-operations.atlassian.net/",
+                    "name": "Signed Off",
+                    "id": "10002",
+                    "statusCategory": {
+                        "self": "https://qed42-operations.atlassian.net/rest/api/2/statuscategory/3",
+                        "id": 3,
+                        "key": "done",
+                        "colorName": "green",
+                        "name": "Done"
+                    }
+                },
+                "priority": {
+                    "self": "https://qed42-operations.atlassian.net/rest/api/2/priority/3",
+                    "iconUrl": "https://qed42-operations.atlassian.net/images/icons/priorities/medium.svg",
+                    "name": "Medium",
+                    "id": "3"
+                },
+                "issuetype": {
+                    "self": "https://qed42-operations.atlassian.net/rest/api/2/issuetype/10002",
+                    "id": "10002",
+                    "description": "A small, distinct piece of work.",
+                    "iconUrl": "https://qed42-operations.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+                    "name": "Task",
+                    "subtask": false,
+                    "avatarId": 10318,
+                    "hierarchyLevel": 0
+                }
+            }
+        },
+        "customfield_10070": null,
+        "fixVersions": [],
+        "resolution": null,
+        "customfield_10104": null,
+        "customfield_10106": 0.0,
+        "customfield_10107": null,
+        "lastViewed": "2025-02-20T11:20:59.092+0530",
+        "customfield_10060": null,
+        "customfield_10061": null,
+        "customfield_10062": null,
+        "customfield_10063": null,
+        "customfield_10064": null,
+        "customfield_10065": null,
+        "customfield_10066": null,
+        "priority": {
+            "self": "https://qed42-operations.atlassian.net/rest/api/2/priority/3",
+            "iconUrl": "https://qed42-operations.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "Medium",
+            "id": "3"
+        },
+        "customfield_10100": null,
+        "customfield_10067": null,
+        "customfield_10068": null,
+        "customfield_10101": null,
+        "customfield_10102": null,
+        "customfield_10069": null,
+        "customfield_10103": null,
+        "labels": [],
+        "timeestimate": 28800,
+        "aggregatetimeoriginalestimate": 28800,
+        "versions": [],
+        "issuelinks": [],
+        "assignee": {
+            "self": "https://qed42-operations.atlassian.net/rest/api/2/user?accountId=712020%3A59782294-d9f6-4c15-a171-905f37259532",
+            "accountId": "712020:59782294-d9f6-4c15-a171-905f37259532",
+            "emailAddress": "tejas.vaij@qed42.com",
+            "avatarUrls": {
+                "48x48": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                "24x24": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                "16x16": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                "32x32": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png"
+            },
+            "displayName": "Tejas Vaij",
+            "active": true,
+            "timeZone": "Asia/Calcutta",
+            "accountType": "atlassian"
+        },
+        "status": {
+            "self": "https://qed42-operations.atlassian.net/rest/api/2/status/10007",
+            "description": "",
+            "iconUrl": "https://qed42-operations.atlassian.net/images/icons/statuses/generic.png",
+            "name": "PR Review",
+            "id": "10007",
+            "statusCategory": {
+                "self": "https://qed42-operations.atlassian.net/rest/api/2/statuscategory/4",
+                "id": 4,
+                "key": "indeterminate",
+                "colorName": "yellow",
+                "name": "In Progress"
+            }
+        },
+        "components": [],
+        "customfield_10050": null,
+        "customfield_10053": null,
+        "customfield_10057": null,
+        "customfield_10058": null,
+        "customfield_10059": null,
+        "customfield_10049": [],
+        "aggregatetimeestimate": 28800,
+        "creator": {
+            "self": "https://qed42-operations.atlassian.net/rest/api/2/user?accountId=712020%3A59782294-d9f6-4c15-a171-905f37259532",
+            "accountId": "712020:59782294-d9f6-4c15-a171-905f37259532",
+            "emailAddress": "tejas.vaij@qed42.com",
+            "avatarUrls": {
+                "48x48": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                "24x24": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                "16x16": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                "32x32": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png"
+            },
+            "displayName": "Tejas Vaij",
+            "active": true,
+            "timeZone": "Asia/Calcutta",
+            "accountType": "atlassian"
+        },
+        "subtasks": [],
+        "reporter": {
+            "self": "https://qed42-operations.atlassian.net/rest/api/2/user?accountId=712020%3A59782294-d9f6-4c15-a171-905f37259532",
+            "accountId": "712020:59782294-d9f6-4c15-a171-905f37259532",
+            "emailAddress": "tejas.vaij@qed42.com",
+            "avatarUrls": {
+                "48x48": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                "24x24": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                "16x16": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                "32x32": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png"
+            },
+            "displayName": "Tejas Vaij",
+            "active": true,
+            "timeZone": "Asia/Calcutta",
+            "accountType": "atlassian"
+        },
+        "aggregateprogress": {
+            "progress": 0,
+            "total": 28800,
+            "percent": 0
+        },
+        "customfield_10045": null,
+        "customfield_10046": null,
+        "customfield_10048": [
+            {
+                "self": "https://qed42-operations.atlassian.net/rest/api/2/customFieldOption/10041",
+                "value": "Development",
+                "id": "10041"
+            }
+        ],
+        "customfield_10038": null,
+        "customfield_10039": null,
+        "progress": {
+            "progress": 0,
+            "total": 28800,
+            "percent": 0
+        },
+        "votes": {
+            "self": "https://qed42-operations.atlassian.net/rest/api/2/issue/QWDI-20/votes",
+            "votes": 0,
+            "hasVoted": false
+        },
+        "worklog": {
+            "startAt": 0,
+            "maxResults": 20,
+            "total": 0,
+            "worklogs": []
+        },
+        "issuetype": {
+            "self": "https://qed42-operations.atlassian.net/rest/api/2/issuetype/10003",
+            "id": "10003",
+            "description": "A small piece of work that's part of a larger task.",
+            "iconUrl": "https://qed42-operations.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+            "name": "Sub-task",
+            "subtask": true,
+            "avatarId": 10316,
+            "hierarchyLevel": -1
+        },
+        "timespent": null,
+        "customfield_10030": null,
+        "project": {
+            "self": "https://qed42-operations.atlassian.net/rest/api/2/project/10090",
+            "id": "10090",
+            "key": "QWDI",
+            "name": "QED42 Web Development Internship",
+            "projectTypeKey": "software",
+            "simplified": false,
+            "avatarUrls": {
+                "48x48": "https://qed42-operations.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10403",
+                "24x24": "https://qed42-operations.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10403?size=small",
+                "16x16": "https://qed42-operations.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10403?size=xsmall",
+                "32x32": "https://qed42-operations.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10403?size=medium"
+            },
+            "projectCategory": {
+                "self": "https://qed42-operations.atlassian.net/rest/api/2/projectCategory/10000",
+                "id": "10000",
+                "description": "All internal projects which are non-billable",
+                "name": "Non-Billable"
+            }
+        },
+        "customfield_10033": null,
+        "customfield_10034": null,
+        "aggregatetimespent": null,
+        "customfield_10035": null,
+        "customfield_10036": null,
+        "customfield_10037": null,
+        "customfield_10027": null,
+        "customfield_10028": null,
+        "customfield_10029": null,
+        "resolutiondate": null,
+        "workratio": 0,
+        "issuerestriction": {
+            "issuerestrictions": {},
+            "shouldDisplay": false
+        },
+        "watches": {
+            "self": "https://qed42-operations.atlassian.net/rest/api/2/issue/QWDI-20/watchers",
+            "watchCount": 1,
+            "isWatching": true
+        },
+        "created": "2025-02-04T17:43:09.892+0530",
+        "customfield_10020": null,
+        "customfield_10021": null,
+        "customfield_10022": null,
+        "customfield_10023": null,
+        "customfield_10024": null,
+        "customfield_10025": null,
+        "customfield_10026": null,
+        "customfield_10016": null,
+        "customfield_10017": null,
+        "customfield_10018": {
+            "hasEpicLinkFieldDependency": false,
+            "showField": false,
+            "nonEditableReason": {
+                "reason": "PLUGIN_LICENSE_ERROR",
+                "message": "The Parent Link is only available to Jira Premium users."
+            }
+        },
+        "customfield_10019": "0|i00sfj:",
+        "updated": "2025-02-20T11:30:00.444+0530",
+        "timeoriginalestimate": 28800,
+        "description": "* create content types and taxonomy terms",
+        "customfield_10010": null,
+        "customfield_10099": null,
+        "customfield_10014": null,
+        "timetracking": {
+            "originalEstimate": "1d",
+            "remainingEstimate": "1d",
+            "originalEstimateSeconds": 28800,
+            "remainingEstimateSeconds": 28800
+        },
+        "customfield_10015": null,
+        "customfield_10005": null,
+        "customfield_10006": null,
+        "customfield_10007": null,
+        "security": null,
+        "customfield_10008": null,
+        "customfield_10009": null,
+        "attachment": [
+            {
+                "self": "https://qed42-operations.atlassian.net/rest/api/2/attachment/19730",
+                "id": "19730",
+                "filename": "Screenshot from 2025-02-06 11-16-49.png",
+                "author": {
+                    "self": "https://qed42-operations.atlassian.net/rest/api/2/user?accountId=712020%3A59782294-d9f6-4c15-a171-905f37259532",
+                    "accountId": "712020:59782294-d9f6-4c15-a171-905f37259532",
+                    "emailAddress": "tejas.vaij@qed42.com",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "24x24": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "16x16": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "32x32": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png"
+                    },
+                    "displayName": "Tejas Vaij",
+                    "active": true,
+                    "timeZone": "Asia/Calcutta",
+                    "accountType": "atlassian"
+                },
+                "created": "2025-02-06T11:19:29.401+0530",
+                "size": 64485,
+                "mimeType": "image/png",
+                "content": "https://qed42-operations.atlassian.net/rest/api/2/attachment/content/19730",
+                "thumbnail": "https://qed42-operations.atlassian.net/rest/api/2/attachment/thumbnail/19730"
+            },
+            {
+                "self": "https://qed42-operations.atlassian.net/rest/api/2/attachment/20158",
+                "id": "20158",
+                "filename": "Screenshot from 2025-02-19 10-31-25.png",
+                "author": {
+                    "self": "https://qed42-operations.atlassian.net/rest/api/2/user?accountId=712020%3A59782294-d9f6-4c15-a171-905f37259532",
+                    "accountId": "712020:59782294-d9f6-4c15-a171-905f37259532",
+                    "emailAddress": "tejas.vaij@qed42.com",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "24x24": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "16x16": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "32x32": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png"
+                    },
+                    "displayName": "Tejas Vaij",
+                    "active": true,
+                    "timeZone": "Asia/Calcutta",
+                    "accountType": "atlassian"
+                },
+                "created": "2025-02-19T10:32:58.410+0530",
+                "size": 88341,
+                "mimeType": "image/png",
+                "content": "https://qed42-operations.atlassian.net/rest/api/2/attachment/content/20158",
+                "thumbnail": "https://qed42-operations.atlassian.net/rest/api/2/attachment/thumbnail/20158"
+            },
+            {
+                "self": "https://qed42-operations.atlassian.net/rest/api/2/attachment/20159",
+                "id": "20159",
+                "filename": "Screenshot from 2025-02-19 10-31-39.png",
+                "author": {
+                    "self": "https://qed42-operations.atlassian.net/rest/api/2/user?accountId=712020%3A59782294-d9f6-4c15-a171-905f37259532",
+                    "accountId": "712020:59782294-d9f6-4c15-a171-905f37259532",
+                    "emailAddress": "tejas.vaij@qed42.com",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "24x24": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "16x16": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "32x32": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png"
+                    },
+                    "displayName": "Tejas Vaij",
+                    "active": true,
+                    "timeZone": "Asia/Calcutta",
+                    "accountType": "atlassian"
+                },
+                "created": "2025-02-19T10:32:58.859+0530",
+                "size": 88754,
+                "mimeType": "image/png",
+                "content": "https://qed42-operations.atlassian.net/rest/api/2/attachment/content/20159",
+                "thumbnail": "https://qed42-operations.atlassian.net/rest/api/2/attachment/thumbnail/20159"
+            },
+            {
+                "self": "https://qed42-operations.atlassian.net/rest/api/2/attachment/20227",
+                "id": "20227",
+                "filename": "Screenshot from 2025-02-20 11-25-22.png",
+                "author": {
+                    "self": "https://qed42-operations.atlassian.net/rest/api/2/user?accountId=712020%3A59782294-d9f6-4c15-a171-905f37259532",
+                    "accountId": "712020:59782294-d9f6-4c15-a171-905f37259532",
+                    "emailAddress": "tejas.vaij@qed42.com",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "24x24": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "16x16": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "32x32": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png"
+                    },
+                    "displayName": "Tejas Vaij",
+                    "active": true,
+                    "timeZone": "Asia/Calcutta",
+                    "accountType": "atlassian"
+                },
+                "created": "2025-02-20T11:29:59.841+0530",
+                "size": 102601,
+                "mimeType": "image/png",
+                "content": "https://qed42-operations.atlassian.net/rest/api/2/attachment/content/20227",
+                "thumbnail": "https://qed42-operations.atlassian.net/rest/api/2/attachment/thumbnail/20227"
+            },
+            {
+                "self": "https://qed42-operations.atlassian.net/rest/api/2/attachment/20226",
+                "id": "20226",
+                "filename": "Screenshot from 2025-02-20 11-28-05.png",
+                "author": {
+                    "self": "https://qed42-operations.atlassian.net/rest/api/2/user?accountId=712020%3A59782294-d9f6-4c15-a171-905f37259532",
+                    "accountId": "712020:59782294-d9f6-4c15-a171-905f37259532",
+                    "emailAddress": "tejas.vaij@qed42.com",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "24x24": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "16x16": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "32x32": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png"
+                    },
+                    "displayName": "Tejas Vaij",
+                    "active": true,
+                    "timeZone": "Asia/Calcutta",
+                    "accountType": "atlassian"
+                },
+                "created": "2025-02-20T11:29:59.399+0530",
+                "size": 89238,
+                "mimeType": "image/png",
+                "content": "https://qed42-operations.atlassian.net/rest/api/2/attachment/content/20226",
+                "thumbnail": "https://qed42-operations.atlassian.net/rest/api/2/attachment/thumbnail/20226"
+            },
+            {
+                "self": "https://qed42-operations.atlassian.net/rest/api/2/attachment/20228",
+                "id": "20228",
+                "filename": "Screenshot from 2025-02-20 11-28-11.png",
+                "author": {
+                    "self": "https://qed42-operations.atlassian.net/rest/api/2/user?accountId=712020%3A59782294-d9f6-4c15-a171-905f37259532",
+                    "accountId": "712020:59782294-d9f6-4c15-a171-905f37259532",
+                    "emailAddress": "tejas.vaij@qed42.com",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "24x24": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "16x16": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                        "32x32": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png"
+                    },
+                    "displayName": "Tejas Vaij",
+                    "active": true,
+                    "timeZone": "Asia/Calcutta",
+                    "accountType": "atlassian"
+                },
+                "created": "2025-02-20T11:30:00.149+0530",
+                "size": 85719,
+                "mimeType": "image/png",
+                "content": "https://qed42-operations.atlassian.net/rest/api/2/attachment/content/20228",
+                "thumbnail": "https://qed42-operations.atlassian.net/rest/api/2/attachment/thumbnail/20228"
+            }
+        ],
+        "summary": "Tejas - Events site - Content types and Taxonomy terms",
+        "customfield_10001": null,
+        "customfield_10002": [],
+        "customfield_10003": null,
+        "customfield_10004": null,
+        "environment": null,
+        "duedate": "2025-04-30",
+        "comment": {
+            "comments": [
+                {
+                    "self": "https://qed42-operations.atlassian.net/rest/api/2/issue/15126/comment/16895",
+                    "id": "16895",
+                    "author": {
+                        "self": "https://qed42-operations.atlassian.net/rest/api/2/user?accountId=712020%3A59782294-d9f6-4c15-a171-905f37259532",
+                        "accountId": "712020:59782294-d9f6-4c15-a171-905f37259532",
+                        "emailAddress": "tejas.vaij@qed42.com",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "24x24": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "16x16": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "32x32": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png"
+                        },
+                        "displayName": "Tejas Vaij",
+                        "active": true,
+                        "timeZone": "Asia/Calcutta",
+                        "accountType": "atlassian"
+                    },
+                    "body": "\n\n!Screenshot from 2025-02-06 11-16-49.png|width=393,height=614,alt=\"Screenshot from 2025-02-06 11-16-49.png\"!\n\nCompleted user guide",
+                    "updateAuthor": {
+                        "self": "https://qed42-operations.atlassian.net/rest/api/2/user?accountId=712020%3A59782294-d9f6-4c15-a171-905f37259532",
+                        "accountId": "712020:59782294-d9f6-4c15-a171-905f37259532",
+                        "emailAddress": "tejas.vaij@qed42.com",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "24x24": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "16x16": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "32x32": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png"
+                        },
+                        "displayName": "Tejas Vaij",
+                        "active": true,
+                        "timeZone": "Asia/Calcutta",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2025-02-06T11:19:29.759+0530",
+                    "updated": "2025-02-06T11:19:29.759+0530",
+                    "jsdPublic": true
+                },
+                {
+                    "self": "https://qed42-operations.atlassian.net/rest/api/2/issue/15126/comment/17218",
+                    "id": "17218",
+                    "author": {
+                        "self": "https://qed42-operations.atlassian.net/rest/api/2/user?accountId=712020%3A59782294-d9f6-4c15-a171-905f37259532",
+                        "accountId": "712020:59782294-d9f6-4c15-a171-905f37259532",
+                        "emailAddress": "tejas.vaij@qed42.com",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "24x24": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "16x16": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "32x32": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png"
+                        },
+                        "displayName": "Tejas Vaij",
+                        "active": true,
+                        "timeZone": "Asia/Calcutta",
+                        "accountType": "atlassian"
+                    },
+                    "body": "!Screenshot from 2025-02-19 10-31-39.png|width=1366,height=768,alt=\"Screenshot from 2025-02-19 10-31-39.png\"!\n\n!Screenshot from 2025-02-19 10-31-25.png|width=1366,height=768,alt=\"Screenshot from 2025-02-19 10-31-25.png\"!",
+                    "updateAuthor": {
+                        "self": "https://qed42-operations.atlassian.net/rest/api/2/user?accountId=712020%3A59782294-d9f6-4c15-a171-905f37259532",
+                        "accountId": "712020:59782294-d9f6-4c15-a171-905f37259532",
+                        "emailAddress": "tejas.vaij@qed42.com",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "24x24": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "16x16": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "32x32": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png"
+                        },
+                        "displayName": "Tejas Vaij",
+                        "active": true,
+                        "timeZone": "Asia/Calcutta",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2025-02-19T10:32:59.150+0530",
+                    "updated": "2025-02-19T10:32:59.150+0530",
+                    "jsdPublic": true
+                },
+                {
+                    "self": "https://qed42-operations.atlassian.net/rest/api/2/issue/15126/comment/17254",
+                    "id": "17254",
+                    "author": {
+                        "self": "https://qed42-operations.atlassian.net/rest/api/2/user?accountId=712020%3A59782294-d9f6-4c15-a171-905f37259532",
+                        "accountId": "712020:59782294-d9f6-4c15-a171-905f37259532",
+                        "emailAddress": "tejas.vaij@qed42.com",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "24x24": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "16x16": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "32x32": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png"
+                        },
+                        "displayName": "Tejas Vaij",
+                        "active": true,
+                        "timeZone": "Asia/Calcutta",
+                        "accountType": "atlassian"
+                    },
+                    "body": "# In the structure go to Content Types and create a content type named organizer \n\n!Screenshot from 2025-02-20 11-25-22.png|width=1366,height=768,alt=\"Screenshot from 2025-02-20 11-25-22.png\"!\n\n# Add fields \n1. organizer image\n2. organizer name\n\n# Save it and manage the form display and display as need\n# Save it and we have out organizer content types\n# Now we can go to Content and create pages with the organizer content type\n\n\n\nTaxonomy\n\n# Go the {{Structure > Taxonomy}} \n# Create a new volcabulary Popularity and add relevant terms\n# Add terms to existing Tags volcabulary \n\n!Screenshot from 2025-02-20 11-28-11.png|width=1366,height=768,alt=\"Screenshot from 2025-02-20 11-28-11.png\"!\n!Screenshot from 2025-02-20 11-28-05.png|width=1366,height=768,alt=\"Screenshot from 2025-02-20 11-28-05.png\"!\n\n# Save it and thats how we have out taxonomy terms.",
+                    "updateAuthor": {
+                        "self": "https://qed42-operations.atlassian.net/rest/api/2/user?accountId=712020%3A59782294-d9f6-4c15-a171-905f37259532",
+                        "accountId": "712020:59782294-d9f6-4c15-a171-905f37259532",
+                        "emailAddress": "tejas.vaij@qed42.com",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "24x24": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "16x16": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png",
+                            "32x32": "https://secure.gravatar.com/avatar/d24fbc685952b7a7ab1a62c7d041161b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FTV-5.png"
+                        },
+                        "displayName": "Tejas Vaij",
+                        "active": true,
+                        "timeZone": "Asia/Calcutta",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2025-02-20T11:30:00.444+0530",
+                    "updated": "2025-02-20T11:30:00.444+0530",
+                    "jsdPublic": true
+                }
+            ],
+            "self": "https://qed42-operations.atlassian.net/rest/api/2/issue/15126/comment",
+            "maxResults": 3,
+            "total": 3,
+            "startAt": 0
+        }
+    }
+}
