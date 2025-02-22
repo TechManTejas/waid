@@ -29,8 +29,8 @@ with open(output_file_path, 'w') as output_file:
             # Open and read the log file
             with open(log_file_path, 'r') as file:
                 logs = file.read()
-                # print("Logs from waid.log:")
-                # print(logs)
+                print("Logs from waid.log:")
+                print(logs)
 
                 # Prepare the request payload
                 data = {
@@ -58,7 +58,7 @@ with open(output_file_path, 'w') as output_file:
                     # Extract and format the response for the JIRA ticket
                     ticket_content = groq_response['choices'][0]['message']['content']
 
-                    # print("\nGenerated JIRA Ticket Based on Logs:")
+                    print("\nGenerated JIRA Ticket Based on Logs:")
                     print(ticket_content)
                 else:
                     print(f"Failed to send logs to Groq. Status code: {response.status_code}")

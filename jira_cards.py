@@ -24,7 +24,6 @@ LOG_FILE = os.path.expanduser("~/waid_summary.log")
 options = {"server": JIRA_DOMAIN}
 jira = JIRA(options, basic_auth=(JIRA_EMAIL, JIRA_API_TOKEN))
 
-
 def fetch_my_kanban_tickets():
     jql_query = f'project = "{PROJECT_KEY}" AND assignee = currentUser() AND status IN ("In Progress") ORDER BY created DESC'
     try:
@@ -37,7 +36,6 @@ def fetch_my_kanban_tickets():
         for idx, issue in enumerate(issues, 1)
     ]
 
-
 def summarize_logs():
     if not os.path.exists(LOG_FILE):
         print("No logs found.")
@@ -47,43 +45,53 @@ def summarize_logs():
         logs = f.readlines()
 
     log_entries = []
+    tasks = set()
+
     for log in logs:
         match = re.search(r"\{.*\}", log)
         if match:
             try:
-                log_entries.append(json.loads(match.group()))
+                entry = json.loads(match.group())
+                log_entries.append(entry)
+                if "window_title" in entry:
+                    tasks.add(entry["window_title"])
             except json.JSONDecodeError:
                 continue
 
     if len(log_entries) < 2:
-        print("Not enough data to calculate work duration.")
+        print("Not enough valid log entries found.")
         return None
 
     start_time = log_entries[0]["timestamp"]
     end_time = log_entries[-1]["timestamp"]
-    duration = (
-        datetime.strptime(end_time, "%Y-%m-%d %H:%M:%S")
-        - datetime.strptime(start_time, "%Y-%m-%d %H:%M:%S")
-    ).total_seconds() / 60
+
+    try:
+        duration = (
+            datetime.strptime(end_time, "%Y-%m-%d %H:%M:%S")
+            - datetime.strptime(start_time, "%Y-%m-%d %H:%M:%S")
+        ).total_seconds() / 60
+    except ValueError as e:
+        print("Timestamp parsing error:", e)
+        return None
 
     if duration < 1:
         print("Duration too short to log work.")
         return None
 
+    description = "\n".join(f"* Worked on `{task}`" for task in tasks)
+
     return {
-        "summary": f"Worked on {log_entries[0]['window_title']}",
-        "description": f"Started at {start_time}, ended at {end_time}, total duration ~{int(duration)} minutes.",
+        "summary": "Work on JIRA Cards and Log Summarizer",
+        "description": description,
         "duration": duration,
         "start_time": start_time,
         "end_time": end_time,
         "date": start_time.split(" ")[0],
-        "genai_efficiency": round(duration / 60, 2),  # Log GenAI efficiency in hours
+        "genai_efficiency": round(duration / 60, 2),
     }
 
-
 def log_time_to_jira(
-    issue_key, summary, duration, start_date, genai_efficiency=0, genai_use_case_desc=""
-):
+    issue_key, summary, duration, start_date, genai_efficiency=0, genai_use_case_desc=""):
     issue = jira.issue(issue_key)
     issue_id = issue.id  # Get issue ID
 
@@ -109,7 +117,6 @@ def log_time_to_jira(
         print(f"Time logged successfully to {issue_key}.")
     else:
         print(f"Failed to log time: {response.status_code} - {response.text}")
-
 
 if __name__ == "__main__":
     tickets = fetch_my_kanban_tickets()
