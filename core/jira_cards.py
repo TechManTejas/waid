@@ -36,80 +36,92 @@ def fetch_my_kanban_tickets():
         for idx, issue in enumerate(issues, 1)
     ]
 
-def summarize_logs():
+def parse_log():
     if not os.path.exists(LOG_FILE):
         print("No logs found.")
         return None
 
     with open(LOG_FILE, "r") as f:
-        logs = f.readlines()
+        log_content = f.read()
 
-    log_entries = []
-    tasks = set()
+    log_data = {}
+    current_field = None
+    lines = log_content.split('\n')
 
-    for log in logs:
-        match = re.search(r"\{.*\}", log)
-        if match:
-            try:
-                entry = json.loads(match.group())
-                log_entries.append(entry)
-                if "window_title" in entry:
-                    tasks.add(entry["window_title"])
-            except json.JSONDecodeError:
-                continue
+    for line in lines:
+        stripped_line = line.strip()
+        if not stripped_line:
+            current_field = None
+            continue
 
-    if len(log_entries) < 2:
-        print("Not enough valid log entries found.")
-        return None
+        field_match = re.match(r'^([A-Za-z\s]+):\s*(.*)', line)
+        if field_match:
+            current_field = field_match.group(1).strip()
+            value = field_match.group(2).strip()
 
-    start_time = log_entries[0]["timestamp"]
-    end_time = log_entries[-1]["timestamp"]
+            if current_field == 'Description':
+                log_data[current_field] = [value] if value else []
+            else:
+                log_data[current_field] = value
+        else:
+            if current_field == 'Description' and current_field in log_data:
+                log_data[current_field].append(stripped_line)
+
+    if 'Description' in log_data:
+        log_data['Description'] = '\n'.join(log_data['Description'])
+
+    required_fields = ['Title', 'Description', 'Date', 'Duration', 'Start time',
+                      'GenAI Efficiency', 'GenAI use case description']
+    for field in required_fields:
+        if field not in log_data:
+            print(f"Missing required field in log: {field}")
+            return None
 
     try:
-        duration = (
-            datetime.strptime(end_time, "%Y-%m-%d %H:%M:%S")
-            - datetime.strptime(start_time, "%Y-%m-%d %H:%M:%S")
-        ).total_seconds() / 60
+        date_str = log_data['Date']
+        parsed_date = datetime.strptime(date_str, "%d/%b/%y")
+        log_data['start_date'] = parsed_date.strftime("%Y-%m-%d")
     except ValueError as e:
-        print("Timestamp parsing error:", e)
+        print(f"Error parsing date: {e}")
         return None
 
-    if duration < 1:
-        print("Duration too short to log work.")
+    try:
+        duration_hours = float(log_data['Duration'])
+        log_data['duration_seconds'] = int(duration_hours * 3600)
+    except ValueError as e:
+        print(f"Error parsing duration: {e}")
         return None
 
-    description = "\n".join(f"* Worked on `{task}`" for task in tasks)
+    try:
+        log_data['genai_efficiency'] = float(log_data['GenAI Efficiency'])
+    except ValueError as e:
+        print(f"Error parsing GenAI Efficiency: {e}")
+        return None
 
-    return {
-        "summary": "Work on JIRA Cards and Log Summarizer",
-        "description": description,
-        "duration": duration,
-        "start_time": start_time,
-        "end_time": end_time,
-        "date": start_time.split(" ")[0],
-        "genai_efficiency": round(duration / 60, 2),
-    }
+    log_data['summary'] = log_data.get('Summary', 'Work Log Summary')
+    log_data['start_time'] = log_data.get('Start time', '00:00:00')
+    log_data['genai_use_case_desc'] = log_data['GenAI use case description']
 
-def log_time_to_jira(
-    issue_key, summary, duration, start_date, genai_efficiency=0, genai_use_case_desc=""):
+    return log_data
+
+def log_time_to_jira(issue_key, log_data):
     issue = jira.issue(issue_key)
-    issue_id = issue.id  # Get issue ID
-
-    worklog_data = {
-        "issueId": issue_id,
-        "timeSpentSeconds": int(duration * 60),
-        "startDate": start_date,
-        "description": summary,
-        "authorAccountId": jira.myself().get("accountId"),
-        "attributes": [
-            {"key": "_GenAIEfficiency_", "value": genai_efficiency},
-            {"key": "_GenAIusecasedescription_", "value": genai_use_case_desc},
-        ],
-    }
-
     headers = {
         "Authorization": f"Bearer {TEMPO_API_TOKEN}",
         "Content-Type": "application/json",
+    }
+
+    worklog_data = {
+        "issueId": issue.id,
+        "timeSpentSeconds": log_data['duration_seconds'],
+        "startDate": log_data['start_date'],
+        "startTime": log_data['start_time'],
+        "description": log_data['summary'],
+        "authorAccountId": jira.myself().get("accountId"),
+        "attributes": [
+            {"key": "_GenAIEfficiency_", "value": log_data['genai_efficiency']},
+            {"key": "_GenAIusecasedescription_", "value": log_data['genai_use_case_desc']},
+        ],
     }
 
     response = requests.post(TEMPO_API_URL, json=worklog_data, headers=headers)
@@ -135,13 +147,19 @@ if __name__ == "__main__":
         print("Invalid selection.")
         exit()
 
-    log_summary = summarize_logs()
-    if log_summary:
-        log_time_to_jira(
-            selected_ticket["key"],
-            log_summary["summary"],
-            log_summary["duration"],
-            log_summary["date"],
-            log_summary["genai_efficiency"],
-            genai_use_case_desc="Worked on issue-related tasks"
-        )
+    log_data = parse_log()
+    if not log_data:
+        print("Failed to process log file.")
+        exit()
+
+    # Add comment to Jira ticket
+    try:
+        issue = jira.issue(selected_ticket["key"])
+        comment_body = f"h3. {log_data['Title']}\n\n{log_data['Description']}"
+        jira.add_comment(issue, comment_body)
+        print(f"Added comment to {selected_ticket['key']}")
+    except Exception as e:
+        print(f"Failed to add comment: {e}")
+
+    # Log time to Tempo
+    log_time_to_jira(selected_ticket["key"], log_data)
