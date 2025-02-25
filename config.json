@@ -1,7 +1,6 @@
 {
   "log_file_path": "~/waid.log",
-  "groq_api_url": "https://api.groq.com/openai/v1/chat/completions",
-  "groq_api_key": "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",
-  "model": "llama-3.3-70b-versatile",
-  "prompt_message": "Here are the logs of what all things I did today. Please check them and generate a JIRA ticket accordingly that I can directly enter into JIRA:"
+  "output_file_path": "~/waid_summary.log",
+  "prompt_message": "Summarize the following logs and generate a JIRA ticket description",
+  "gemini_api_url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-2:generateContent"
 }

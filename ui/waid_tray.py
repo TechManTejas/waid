@@ -8,9 +8,8 @@ from gi.repository import AppIndicator3, Gtk, GLib
 import os
 import subprocess
 
-ICON_ACTIVE = os.path.abspath("waid_active.png")
-ICON_INACTIVE = os.path.abspath("waid_inactive.png")
-ICON_PAUSED = os.path.abspath("waid_paused.png")
+ICON_ACTIVE = os.path.abspath("../assets/waid_active.png")
+ICON_INACTIVE = os.path.abspath("../assets/inactive.png")
 LOG_FILE = os.path.expanduser("~/waid.log")
 
 timer_running = False
@@ -54,11 +53,6 @@ def set_active(_):
 def set_inactive(_):
     notify("WAID Service Inactive")
     set_icon(ICON_INACTIVE)
-    stop_timer()
-
-def set_paused(_):
-    notify("WAID Service Paused")
-    set_icon(ICON_PAUSED)
     stop_timer()
 
 def quit_app(_):
@@ -135,10 +129,6 @@ def main():
     inactive_item = Gtk.MenuItem(label="Set Inactive")
     inactive_item.connect("activate", set_inactive)
     menu.append(inactive_item)
-    
-    paused_item = Gtk.MenuItem(label="Set Paused")
-    paused_item.connect("activate", set_paused)
-    menu.append(paused_item)
     
     log_file_item = Gtk.MenuItem(label="Open Log File")
     log_file_item.connect("activate", open_log_file)
