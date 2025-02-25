@@ -34,8 +34,8 @@ with open(output_file_path, 'w') as output_file:
             # Open and read the log file
             with open(log_file_path, 'r') as file:
                 logs = file.read()
-                print("Logs from waid.log:")
-                print(logs)
+                # print("Logs from waid.log:")
+                # print(logs)
 
                 # Prepare the request payload for Gemini Flash 2
                 data = {
@@ -45,14 +45,13 @@ with open(output_file_path, 'w') as output_file:
                     }]
                 }
 
-                headers = {
-                    "Authorization": f"Bearer {GEMINI_API_KEY}",
-                    "Content-Type": "application/json"
-                }
-
+                #  headers = {
+                #     "Authorization": f"Bearer {GEMINI_API_KEY}",
+                #     "Content-Type": "application/json"
+                # }
+                api_url = f"{config['gemini_api_url']}?key={GEMINI_API_KEY}"
                 # Send logs and prompt to Gemini API
-                response = requests.post(config['gemini_api_url'], json=data, headers=headers)
-
+                response = requests.post(api_url, json=data)
                 # Check if the request was successful
                 if response.status_code == 200:
                     gemini_response = response.json()
@@ -60,7 +59,7 @@ with open(output_file_path, 'w') as output_file:
                     # Extract and format the response for the JIRA ticket
                     ticket_content = gemini_response['candidates'][0]['content']['parts'][0]['text']
 
-                    print("\nGenerated JIRA Ticket Based on Logs:")
+                    # print("\nGenerated JIRA Ticket Based on Logs:")
                     print(ticket_content)
                 else:
                     print(f"Failed to send logs to Gemini. Status code: {response.status_code}")
