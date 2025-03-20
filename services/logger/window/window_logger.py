@@ -5,8 +5,9 @@ import subprocess
 import json
 import time
 from services.logger.log_manager import LogManager
+from services.logger.logger import Logger
 
-class WindowLogger:
+class WindowLogger(Logger):
     """Logs active window changes and user interactions with windows."""
 
     def __init__(self) -> None:
