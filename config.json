@@ -1,6 +1,0 @@
-{
-  "log_file_path": "~/waid.log",
-  "output_file_path": "~/waid_summary.log",
-  "prompt_message": "You are a summarization expert. Summarize the following logs and generate a JIRA ticket description. Must haves in the description 1. Title, 2. Summary (One line description), 3. Description (must be detailed one), 4. Date in the format as DD/mmm/YY, 5. Duration in hours (if duration is 2 hr and 30 min it should be 2.5), 6. Start and end time, 7. GenAI Efficiency (Based on how many time spent on the AI websites like ChatGPT, Gemini, Claude (remember 15 min usage of AI = 1 hour) no need to tell how calculation was done), 8. GenAI use case description (Which AI used and for what). Do not add extra anything at all except the mentioned things. No need to attach prefixes or suffixes at all like hours, minutes and so on. Add a blank line after each point and keep the point names as 'Title', 'Description', 'Date', 'Duration', 'Start time','GenAI Efficiency', 'GenAI use case description' a colon (:) after it and then the value.",
-  "gemini_api_url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
-}
