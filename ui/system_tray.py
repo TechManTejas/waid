@@ -1,6 +1,6 @@
+import os
 from pystray import Icon, Menu, MenuItem
 from PIL import Image
-import os
 from services.logger.log_manager import LogManager
 
 class SystemTray:
@@ -9,45 +9,44 @@ class SystemTray:
     ICON_ACTIVE = os.path.join("ui/assets", "waid_active.png")
     ICON_INACTIVE = os.path.join("ui/assets", "waid_inactive.png")
 
-    def __init__(self) -> None:
-        self.image_active = Image.open(self.ICON_ACTIVE)
-        self.image_inactive = Image.open(self.ICON_INACTIVE)
-        self.service_active = True
-        self.icon = Icon("WAID Service", self.image_active, menu=self.build_menu())
-        
-        # Initialize Log Manager
-        self.log_manager = LogManager()
-        self.log_manager.start()
+    service_active = True
+    icon = None
 
-    def toggle_service(self, icon, item) -> None:
+    @classmethod
+    def toggle_service(cls, icon, item) -> None:
         """Toggle WAID service on/off."""
-        self.service_active = not self.service_active
-        self.icon.icon = self.image_active if self.service_active else self.image_inactive
-        self.update_menu()
+        cls.service_active = not cls.service_active
+        cls.icon.icon = Image.open(cls.ICON_ACTIVE if cls.service_active else cls.ICON_INACTIVE)
+        cls.update_menu()
 
         # Start or stop logging based on service state
-        if self.service_active:
-            self.log_manager.start()
+        if cls.service_active:
+            LogManager.start()
         else:
-            self.log_manager.stop()
+            LogManager.stop()
 
-    def open_settings(self, icon, item) -> None:
+    @classmethod
+    def open_settings(cls, icon, item) -> None:
         """Placeholder for opening settings."""
         print("Opening Settings...")
 
-    def build_menu(self) -> Menu:
+    @classmethod
+    def build_menu(cls) -> Menu:
         """Construct the system tray menu."""
         return Menu(
-            MenuItem("Service Active", self.toggle_service, checked=lambda item: self.service_active),
+            MenuItem("Service Active", cls.toggle_service, checked=lambda item: cls.service_active),
             Menu.SEPARATOR,
-            MenuItem("Settings", self.open_settings)
+            MenuItem("Settings", cls.open_settings)
         )
 
-    def update_menu(self) -> None:
+    @classmethod
+    def update_menu(cls) -> None:
         """Update the menu dynamically."""
-        self.icon.menu = self.build_menu()
-        self.icon.update_menu()
+        cls.icon.menu = cls.build_menu()
+        cls.icon.update_menu()
 
-    def start(self) -> None:
+    @classmethod
+    def start(cls) -> None:
         """Start the system tray icon."""
-        self.icon.run()
+        cls.icon = Icon("WAID Service", Image.open(cls.ICON_ACTIVE), menu=cls.build_menu())
+        cls.icon.run()

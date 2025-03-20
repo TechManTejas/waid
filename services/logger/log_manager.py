@@ -7,6 +7,9 @@ class LogManager:
     LOG_DIR = os.path.expanduser("~/waid_logs")
     os.makedirs(LOG_DIR, exist_ok=True) 
 
+    loggers = []
+    running = False
+
     @staticmethod
     def log(message: str) -> None:
         """Write logs to a dated file inside the waid_logs folder."""
@@ -16,21 +19,26 @@ class LogManager:
         with open(log_file_path, "a") as f:
             f.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - {message}\n")
 
-    def __init__(self):
-        from services.logger.window.window_logger import WindowLogger 
-        self.loggers = [WindowLogger()]
-        self.running = False
-    
-    def start(self) -> None:
-        """Start all loggers in separate threads."""
-        if not self.running:
-            self.running = True
-            for logger in self.loggers:
+    @classmethod
+    def initialize(cls) -> None:
+        """Initialize loggers if not already initialized."""
+        if not cls.loggers:
+            from services.logger.window.window_logger import WindowLogger 
+            cls.loggers = [WindowLogger()]
+
+    @classmethod
+    def start(cls) -> None:
+        """Start all loggers."""
+        if not cls.running:
+            cls.running = True
+            cls.initialize()
+            for logger in cls.loggers:
                 logger.start()
 
-    def stop(self) -> None:
+    @classmethod
+    def stop(cls) -> None:
         """Stop all loggers gracefully."""
-        if self.running:
-            self.running = False
-            for logger in self.loggers:
+        if cls.running:
+            cls.running = False
+            for logger in cls.loggers:
                 logger.stop()

@@ -43,6 +43,7 @@ class WindowLogger(Logger):
 
     def on_click(self, x, y, button, pressed) -> None:
         """Detect user interaction and log window changes."""
+        print(x, y, button, pressed)
         if pressed:
             self.log_window_change()
 
