@@ -6,8 +6,10 @@ from ui.system_tray import SystemTray
 
 def main() -> None:
     """Entry point for the application."""
-    # Register signals and clean old logs
+    # Register signals 
     SignalHandler.register_signals()
+
+    # Clean old logs
     Cleanup.cleanup_logs(days=7)
 
     # Start logging
@@ -16,7 +18,7 @@ def main() -> None:
     # Send startup notification
     Notification.send("I am tracking you ;)")
 
-    # Start system tray
+    # Start system tray (blocking)
     SystemTray.start()
 
 if __name__ == "__main__":
