@@ -14,7 +14,7 @@ class WindowLogger(Logger):
         self.display = Xlib.display.Display()
         self.root = self.display.screen().root
         self.active_window_title = None
-        self.listener = mouse.Listener(on_click=self.on_click)
+        self.listener = None 
 
     def get_active_window_title(self) -> str:
         """Retrieve the title of the currently focused window."""
@@ -48,8 +48,12 @@ class WindowLogger(Logger):
 
     def start(self) -> None:
         """Start the window logging process."""
-        self.listener.start()
+        if self.listener is None or not self.listener.is_alive():
+            self.listener = mouse.Listener(on_click=self.on_click)
+            self.listener.start()
 
     def stop(self) -> None:
         """Stop the window logging process."""
-        self.listener.stop()
+        if self.listener is not None:
+            self.listener.stop()
+            self.listener = None  

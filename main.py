@@ -1,10 +1,10 @@
-from services.signal.signal_handler import SignalHandler
+from services.startup.startup_manager import StartupManager
 from ui.system_tray import SystemTray
 
 def main() -> None:
-    """Entry point for the application, responsible for launching the system tray."""
-    SignalHandler.register_signals()
-    
+    """Entry point for the application."""
+    StartupManager.run() 
+
     tray = SystemTray()
     tray.start()
 
