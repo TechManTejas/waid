@@ -1,1 +1,0 @@
-#keka_manager
