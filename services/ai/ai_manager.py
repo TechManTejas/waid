@@ -2,7 +2,10 @@ from services.ai.gemini.gemini import GeminiAI
 
 
 class AIManager:
-    _providers = {"gemini": GeminiAI}
+    _providers = {
+        "gemini": GeminiAI(),
+        # Add more ai providers here, e.g., "openai": OpenAI()
+    }
     _selected_provider = "gemini"
 
     @classmethod

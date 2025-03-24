@@ -4,7 +4,6 @@ import Xlib.display
 import subprocess
 import json
 import time
-from services.logger.log_manager import LogManager
 from services.logger.logger import Logger
 
 class WindowLogger(Logger):
@@ -26,7 +25,7 @@ class WindowLogger(Logger):
             if output.returncode == 0:
                 return output.stdout.strip()
         except Exception as e:
-            LogManager.log(f"Error getting window title: {e}")
+            Logger.log(f"Error getting window title: {e}")
         return None
 
     def log_window_change(self) -> None:
@@ -38,7 +37,7 @@ class WindowLogger(Logger):
                 "timestamp": time.strftime('%Y-%m-%d %H:%M:%S'),
                 "window_title": window_title
             }
-            LogManager.log(json.dumps(log_entry))
+            Logger.log(json.dumps(log_entry))
             self.active_window_title = window_title
 
     def on_click(self, x, y, button, pressed) -> None:

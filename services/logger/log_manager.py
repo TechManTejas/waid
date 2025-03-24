@@ -1,44 +1,75 @@
 import os
-import time
+from services.logger.window.window_logger import WindowLogger  
+from services.logger.logger import Logger
+
 
 class LogManager:
     """Manages multiple loggers and provides a centralized logging mechanism."""
 
-    LOG_DIR = os.path.expanduser("~/waid_logs")
-    os.makedirs(LOG_DIR, exist_ok=True) 
-
-    loggers = []
-    running = False
-
-    @staticmethod
-    def log(message: str) -> None:
-        """Write logs to a dated file inside the waid_logs folder."""
-        log_filename = f"{time.strftime('%Y-%m-%d')}.log"
-        log_file_path = os.path.join(LogManager.LOG_DIR, log_filename)
-
-        with open(log_file_path, "a") as f:
-            f.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - {message}\n")
+    _available_loggers = {
+        "window_logger": WindowLogger(),
+        # Add more loggers here, e.g., "keyboard_logger": KeyboardLogger()
+    }
+    
+    active_loggers = set(_available_loggers.keys())
 
     @classmethod
-    def initialize(cls) -> None:
-        """Initialize loggers if not already initialized."""
-        if not cls.loggers:
-            from services.logger.window.window_logger import WindowLogger 
-            cls.loggers = [WindowLogger()]
+    def get_loggers(cls) -> dict:
+        """
+        Get all available loggers and their active status.
+        :return: Dictionary of logger names with their active state.
+        """
+        return {name: name in cls.active_loggers for name in cls._available_loggers}
+
+    @classmethod
+    def set_active_loggers(cls, logger_names: list) -> None:
+        """
+        Set which loggers should be active and restart logging.
+        :param logger_names: List of logger names to activate.
+        """
+        cls.active_loggers = set(logger_names)
+        cls.restart()
+
+    @classmethod
+    def get_active_loggers(cls) -> list:
+        """
+        Get the currently active loggers.
+        :return: List of active logger names.
+        """
+        return list(cls.active_loggers)
 
     @classmethod
     def start(cls) -> None:
-        """Start all loggers."""
-        if not cls.running:
-            cls.running = True
-            cls.initialize()
-            for logger in cls.loggers:
+        """Start only the loggers selected by the user (all by default)."""
+        for logger_name in cls.active_loggers:
+            logger = cls._available_loggers.get(logger_name)
+            if logger:
                 logger.start()
 
     @classmethod
     def stop(cls) -> None:
-        """Stop all loggers gracefully."""
-        if cls.running:
-            cls.running = False
-            for logger in cls.loggers:
+        """Stop only the loggers that were started."""
+        for logger_name in cls.active_loggers:
+            logger = cls._available_loggers.get(logger_name)
+            if logger:
                 logger.stop()
+
+    @classmethod
+    def restart(cls) -> None:
+        """Restart all active loggers (stop and start again)."""
+        cls.stop()
+        cls.start()
+
+    @classmethod
+    def get_all_logs(cls) -> list:
+        """
+        Fetch all logs from the latest log file.
+        :return: List of log messages.
+        """
+        log_file_path = Logger.get_log_filepath()
+
+        if not os.path.exists(log_file_path):
+            return []
+
+        with open(log_file_path, "r") as f:
+            return f.readlines()
