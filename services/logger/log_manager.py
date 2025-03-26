@@ -1,7 +1,7 @@
 import os
+from services.config.config_manager import ConfigManager
 from services.logger.window.window_logger import WindowLogger  
 from services.logger.logger import Logger
-
 
 class LogManager:
     """Manages multiple loggers and provides a centralized logging mechanism."""
@@ -11,7 +11,7 @@ class LogManager:
         # Add more loggers here, e.g., "keyboard_logger": KeyboardLogger()
     }
     
-    active_loggers = set(_available_loggers.keys())
+    _CONFIG_KEY = "active_loggers"
 
     @classmethod
     def get_loggers(cls) -> dict:
@@ -19,7 +19,8 @@ class LogManager:
         Get all available loggers and their active status.
         :return: Dictionary of logger names with their active state.
         """
-        return {name: name in cls.active_loggers for name in cls._available_loggers}
+        active_loggers = cls.get_active_loggers()
+        return {name: name in active_loggers for name in cls._available_loggers}
 
     @classmethod
     def set_active_loggers(cls, logger_names: list) -> None:
@@ -27,21 +28,25 @@ class LogManager:
         Set which loggers should be active and restart logging.
         :param logger_names: List of logger names to activate.
         """
-        cls.active_loggers = set(logger_names)
+        ConfigManager.set(cls._CONFIG_KEY, logger_names)
         cls.restart()
 
     @classmethod
     def get_active_loggers(cls) -> list:
         """
-        Get the currently active loggers.
+        Get the currently active loggers from ConfigManager.
         :return: List of active logger names.
         """
-        return list(cls.active_loggers)
+        active_loggers = ConfigManager.get(cls._CONFIG_KEY)
+        if not isinstance(active_loggers, list):  
+            active_loggers = list(cls._available_loggers.keys())
+            ConfigManager.set(cls._CONFIG_KEY, active_loggers)  
+        return active_loggers
 
     @classmethod
     def start(cls) -> None:
         """Start only the loggers selected by the user (all by default)."""
-        for logger_name in cls.active_loggers:
+        for logger_name in cls.get_active_loggers():
             logger = cls._available_loggers.get(logger_name)
             if logger:
                 logger.start()
@@ -49,7 +54,7 @@ class LogManager:
     @classmethod
     def stop(cls) -> None:
         """Stop only the loggers that were started."""
-        for logger_name in cls.active_loggers:
+        for logger_name in cls.get_active_loggers():
             logger = cls._available_loggers.get(logger_name)
             if logger:
                 logger.stop()

@@ -19,7 +19,6 @@ class SystemTray:
         cls.icon.icon = Image.open(cls.ICON_ACTIVE if cls.service_active else cls.ICON_INACTIVE)
         cls.update_menu()
 
-        # Start or stop logging based on service state
         if cls.service_active:
             LogManager.start()
         else:

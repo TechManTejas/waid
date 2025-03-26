@@ -6,7 +6,7 @@ class AIManager:
         "gemini": GeminiAI(),
         # Add more ai providers here, e.g., "openai": OpenAI()
     }
-    _selected_provider = "gemini"
+    _selected_provider = ""
 
     @classmethod
     def set_provider(cls, name: str):
