@@ -1,7 +1,11 @@
 import os
+from enum import Enum
 from services.config.config_manager import ConfigManager
 from services.logger.window.window_logger import WindowLogger  
 from services.logger.logger import Logger
+
+class LogManagerConfig(Enum):
+    ACTIVE_LOGGERS = "active_loggers"
 
 class LogManager:
     """Manages multiple loggers and provides a centralized logging mechanism."""
@@ -10,8 +14,6 @@ class LogManager:
         "window_logger": WindowLogger(),
         # Add more loggers here, e.g., "keyboard_logger": KeyboardLogger()
     }
-    
-    _CONFIG_KEY = "active_loggers"
 
     @classmethod
     def get_loggers(cls) -> dict:
@@ -28,7 +30,7 @@ class LogManager:
         Set which loggers should be active and restart logging.
         :param logger_names: List of logger names to activate.
         """
-        ConfigManager.set(cls._CONFIG_KEY, logger_names)
+        ConfigManager.set(LogManagerConfig.ACTIVE_LOGGERS.value, logger_names)
         cls.restart()
 
     @classmethod
@@ -37,10 +39,10 @@ class LogManager:
         Get the currently active loggers from ConfigManager.
         :return: List of active logger names.
         """
-        active_loggers = ConfigManager.get(cls._CONFIG_KEY)
+        active_loggers = ConfigManager.get(LogManagerConfig.ACTIVE_LOGGERS.value)
         if not isinstance(active_loggers, list):  
             active_loggers = list(cls._available_loggers.keys())
-            ConfigManager.set(cls._CONFIG_KEY, active_loggers)  
+            ConfigManager.set(LogManagerConfig.ACTIVE_LOGGERS.value, active_loggers)  
         return active_loggers
 
     @classmethod

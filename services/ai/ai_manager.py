@@ -1,5 +1,10 @@
+from enum import Enum
 from services.ai.gemini.gemini import GeminiAI
 from services.config.config_manager import ConfigManager
+
+
+class AIManagerConfig(Enum):
+    SELECTED_PROVIDER = "selected_ai_provider"
 
 
 class AIManager:
@@ -14,7 +19,7 @@ class AIManager:
         Set the AI provider and persist it in the config.
         """
         if name in cls._providers:
-            ConfigManager.set("selected_ai_provider", name)
+            ConfigManager.set(AIManagerConfig.SELECTED_PROVIDER.value, name)
         else:
             raise ValueError(f"AI provider '{name}' not available.")
 
@@ -23,7 +28,7 @@ class AIManager:
         """
         Get the currently selected AI provider from config.
         """
-        return ConfigManager.get("selected_ai_provider") or ""
+        return ConfigManager.get(AIManagerConfig.SELECTED_PROVIDER.value) or ""
 
     @classmethod
     def send_prompt(cls, prompt: str) -> str:

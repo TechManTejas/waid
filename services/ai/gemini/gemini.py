@@ -3,7 +3,7 @@ from enum import Enum
 from services.ai.ai_provider import AIProvider
 from services.secret.secret_manager import SecretManager
 
-class GeminiConfig(Enum):
+class GeminiSecret(Enum):
     API_KEY = "gemini_api_key"
     MODEL = "gemini_model"
 
@@ -24,8 +24,8 @@ class GeminiAI(AIProvider):
         """
         Configure Gemini AI with stored API key and model name.
         """
-        api_key = SecretManager.get_secret(GeminiConfig.API_KEY.value)
-        model_name = SecretManager.get_secret(GeminiConfig.MODEL.value)
+        api_key = SecretManager.get_secret(GeminiSecret.API_KEY.value)
+        model_name = SecretManager.get_secret(GeminiSecret.MODEL.value)
 
         if api_key:
             genai.configure(api_key=api_key)
@@ -39,7 +39,7 @@ class GeminiAI(AIProvider):
         """
         Securely store the configuration parameters for GeminiAI.
         """
-        for key in GeminiConfig:
+        for key in GeminiSecret:
             if key.value in config_obj:
                 SecretManager.set_secret(key.value, config_obj[key.value])
         cls._configure_gemini()
@@ -49,14 +49,14 @@ class GeminiAI(AIProvider):
         """
         Retrieve stored Gemini AI configuration securely.
         """
-        return {key.value: SecretManager.get_secret(key.value) for key in GeminiConfig}
+        return {key.value: SecretManager.get_secret(key.value) for key in GeminiSecret}
 
     @classmethod
     def get_required_configuration(cls) -> list:
         """
         Return a list of required configurations to configure this AI provider.
         """
-        return [key.value for key in GeminiConfig]
+        return [key.value for key in GeminiSecret]
 
     @classmethod
     def generate_text(cls, prompt: str) -> str:
