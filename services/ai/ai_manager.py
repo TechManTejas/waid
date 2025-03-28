@@ -51,6 +51,16 @@ class AIManager:
         if not provider:
             raise ValueError("No valid AI provider selected.")
         return provider.get_configuration()
+    
+    @classmethod
+    def get_required_configuration(cls) -> dict:
+        """
+        Get the required configuration of the currently selected AI provider.
+        """
+        provider = cls._providers.get(cls._selected_provider)
+        if not provider:
+            raise ValueError("No valid AI provider selected.")
+        return provider.get_required_configuration()
 
     @classmethod
     def get_available_providers(cls) -> list:
