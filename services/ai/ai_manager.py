@@ -1,33 +1,36 @@
 from services.ai.gemini.gemini import GeminiAI
+from services.config.config_manager import ConfigManager
 
 
 class AIManager:
     _providers = {
         "gemini": GeminiAI(),
-        # Add more ai providers here, e.g., "openai": OpenAI()
+        # Add more AI providers here, e.g., "openai": OpenAI()
     }
-    _selected_provider = ""
 
     @classmethod
     def set_provider(cls, name: str):
+        """
+        Set the AI provider and persist it in the config.
+        """
         if name in cls._providers:
-            cls._selected_provider = name
+            ConfigManager.set("selected_ai_provider", name)
         else:
             raise ValueError(f"AI provider '{name}' not available.")
 
     @classmethod
     def get_provider(cls) -> str:
         """
-        Get the currently selected AI provider.
+        Get the currently selected AI provider from config.
         """
-        return cls._selected_provider
+        return ConfigManager.get("selected_ai_provider") or ""
 
     @classmethod
     def send_prompt(cls, prompt: str) -> str:
         """
         Send a prompt to the selected AI provider and get the response.
         """
-        provider = cls._providers.get(cls._selected_provider)
+        provider = cls._providers.get(cls.get_provider())
         if not provider:
             raise ValueError("No valid AI provider selected.")
         return provider.generate_text(prompt)
@@ -37,7 +40,7 @@ class AIManager:
         """
         Set configuration for the currently selected AI provider.
         """
-        provider = cls._providers.get(cls._selected_provider)
+        provider = cls._providers.get(cls.get_provider())
         if not provider:
             raise ValueError("No valid AI provider selected.")
         provider.set_configuration(config_obj)
@@ -47,17 +50,17 @@ class AIManager:
         """
         Get the configuration of the currently selected AI provider.
         """
-        provider = cls._providers.get(cls._selected_provider)
+        provider = cls._providers.get(cls.get_provider())
         if not provider:
             raise ValueError("No valid AI provider selected.")
         return provider.get_configuration()
-    
+
     @classmethod
-    def get_required_configuration(cls) -> dict:
+    def get_required_configuration(cls) -> list:
         """
         Get the required configuration of the currently selected AI provider.
         """
-        provider = cls._providers.get(cls._selected_provider)
+        provider = cls._providers.get(cls.get_provider())
         if not provider:
             raise ValueError("No valid AI provider selected.")
         return provider.get_required_configuration()
