@@ -2,6 +2,7 @@ from services.cleanup.cleanup import Cleanup
 from services.notification.notification import Notification
 from services.signal.signal_handler import SignalHandler
 from services.logger.log_manager import LogManager
+from services.ai.ai_manager import AIManager
 from ui.system_tray import SystemTray
 
 def main() -> None:
