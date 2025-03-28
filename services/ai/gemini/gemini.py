@@ -1,18 +1,18 @@
 import google.generativeai as genai
 from services.ai.ai_provider import AIProvider
+from services.secret.secret_manager import SecretManager
 
 
 class GeminiAI(AIProvider):
     _model = None
-    _configurations = {}
 
     @classmethod
     def _configure_gemini(cls):
         """
-        Configure Gemini AI with API key and model name.
+        Configure Gemini AI with API key and model name stored in SecretManager.
         """
-        api_key = cls._configurations.get("api_key")
-        model_name = cls._configurations.get("model")
+        api_key = SecretManager.get_secret("api_key")
+        model_name = SecretManager.get_secret("model")
 
         if api_key:
             genai.configure(api_key=api_key)
@@ -22,17 +22,28 @@ class GeminiAI(AIProvider):
     @classmethod
     def set_configuration(cls, config_obj: dict):
         """
-        Set and apply configuration parameters for GeminiAI.
+        Securely store the configuration parameters for GeminiAI.
         """
-        cls._configurations.update(config_obj)
+        for key, value in config_obj.items():
+            SecretManager.set_secret(key, value)
         cls._configure_gemini()
 
     @classmethod
     def get_configuration(cls) -> dict:
         """
-        Get current configuration settings for GeminiAI.
+        Retrieve stored Gemini AI configuration securely.
         """
-        return cls._configurations
+        return {
+            key: SecretManager.get_secret(key)
+            for key in cls.get_required_configurations()
+        }
+
+    @classmethod
+    def get_required_configuration(cls) -> list:
+        """
+        Return a list of required configuration to configure this AI provider.
+        """
+        return ["api_key", "model"]
 
     @classmethod
     def generate_text(cls, prompt: str) -> str:

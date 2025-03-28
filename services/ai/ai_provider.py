@@ -21,6 +21,15 @@ class AIProvider(ABC):
 
     @classmethod
     @abstractmethod
+    def get_required_configuration(cls) -> list:
+        """
+        Return a list of required configurations to configure the AI provider.
+        Must be implemented by subclasses.
+        """
+        pass
+
+    @classmethod
+    @abstractmethod
     def generate_text(cls, prompt: str) -> str:
         """
         Generate text using the configured AI model.

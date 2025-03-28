@@ -3,7 +3,6 @@ import sys
 
 app = None
 
-
 def open_settings_window():
     """Open a blank settings window."""
     global app
