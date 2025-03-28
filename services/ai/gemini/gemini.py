@@ -5,6 +5,15 @@ from services.secret.secret_manager import SecretManager
 
 class GeminiAI(AIProvider):
     _model = None
+    _initialized = False
+
+    def __new__(cls, *args, **kwargs):
+        """
+        Class constructor to ensure initialization at class level.
+        """
+        if not cls._initialized:
+            cls._configure_gemini()
+        return super().__new__(cls)
 
     @classmethod
     def _configure_gemini(cls):
@@ -18,6 +27,8 @@ class GeminiAI(AIProvider):
             genai.configure(api_key=api_key)
         if model_name:
             cls._model = genai.GenerativeModel(model_name)
+
+        cls._initialized = True 
 
     @classmethod
     def set_configuration(cls, config_obj: dict):
