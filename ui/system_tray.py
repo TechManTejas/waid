@@ -2,6 +2,7 @@ import os
 from pystray import Icon, Menu, MenuItem
 from PIL import Image
 from services.logger.log_manager import LogManager
+from ui.views.settings import open_settings_window
 
 class SystemTray:
     """System tray icon for WAID service with minimal options."""
@@ -26,8 +27,8 @@ class SystemTray:
 
     @classmethod
     def open_settings(cls, icon, item) -> None:
-        """Placeholder for opening settings."""
-        print("Opening Settings...")
+        """Open the settings window."""
+        open_settings_window()
 
     @classmethod
     def build_menu(cls) -> Menu:
