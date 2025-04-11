@@ -32,7 +32,7 @@ class GeminiAI(AIProvider):
         if model_name:
             cls._model = genai.GenerativeModel(model_name)
 
-        cls._initialized = True 
+        cls._initialized = True
 
     @classmethod
     def set_configuration(cls, config_obj: dict):
